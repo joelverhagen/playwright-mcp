@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
-  "name": "com.microsoft/playwright",
+  "name": "com.joelverhagen.mcp/playwright",
   "title": "Playwright",
   "description": "Automate web browsers using accessibility trees for testing and data extraction.",
   "websiteUrl": "https://playwright.dev",
@@ -12,7 +12,7 @@
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "@playwright/mcp",
+      "identifier": "@joelverhagen/playwrite-mcp",
       "version": "<version is replaced in the publish pipeline>",
       "transport": {
         "type": "stdio"
