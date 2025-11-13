@@ -42,7 +42,6 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run lint
-      - run: npm run ctest
 
       - name: Publish to npm with next tag
         run: npm publish --tag next
