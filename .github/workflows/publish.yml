@@ -210,4 +210,4 @@ jobs:
               -registry https://staging.registry.modelcontextprotocol.io
 
           # publish the server.json
-          # ${{ runner.temp }}/mcp-publisher publish ./.mcp/server.json -registry https://staging.registry
+          ${{ runner.temp }}/mcp-publisher publish ./.mcp/server.json -registry https://staging.registry.modelcontextprotocol.io
