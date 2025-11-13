@@ -206,7 +206,7 @@ jobs:
           ${{ runner.temp }}/mcp-publisher `
               login dns azure-key-vault `
               -vault "${{ secrets.KV_NAME }}" -key "${{ secrets.KV_KEY_NAME }}" `
-              -domain microsoft.com
+              -domain mcp.joelverhagen.com
 
           # publish the server.json
           ${{ runner.temp }}/mcp-publisher publish ./.mcp/server.json
