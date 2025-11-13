@@ -205,7 +205,7 @@ jobs:
           # log in using Key Vault
           ${{ runner.temp }}/mcp-publisher `
               login dns azure-key-vault `
-              -vault "${{ secrets.KV_KV_NAME }}" -key "${{ secrets.KV_KV_KEY_NAME }}" `
+              -vault "${{ secrets.KV_NAME }}" -key "${{ secrets.KV_KEY_NAME }}" `
               -domain microsoft.com
 
           # publish the server.json
