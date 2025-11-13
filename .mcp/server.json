@@ -3,7 +3,6 @@
   "name": "com.joelverhagen.mcp/playwright",
   "title": "Playwright",
   "description": "Automate web browsers using accessibility trees for testing and data extraction.",
-  "websiteUrl": "https://playwright.dev",
   "repository": {
     "url": "https://github.com/microsoft/playwright-mcp",
     "source": "github"
