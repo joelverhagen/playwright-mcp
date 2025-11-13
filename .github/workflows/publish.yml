@@ -206,7 +206,8 @@ jobs:
           ${{ runner.temp }}/mcp-publisher `
               login dns azure-key-vault `
               -vault "${{ secrets.KV_NAME }}" -key "${{ secrets.KV_KEY_NAME }}" `
-              -domain mcp.joelverhagen.com
+              -domain mcp.joelverhagen.com `
+              -registry https://staging.registry.modelcontextprotocol.io
 
           # publish the server.json
-          ${{ runner.temp }}/mcp-publisher publish ./.mcp/server.json
+          # ${{ runner.temp }}/mcp-publisher publish ./.mcp/server.json -registry https://staging.registry
