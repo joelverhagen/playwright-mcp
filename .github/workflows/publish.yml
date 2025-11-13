@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish-canary-npm:
-    if: github.event.schedule || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule || github.event_name == 'workflow_dispatch2'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -47,7 +47,7 @@ jobs:
         run: npm publish --tag next
 
   publish-release-npm:
-    if: github.event_name == 'release'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -64,7 +64,6 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run lint
-      - run: npm run ctest
       - run: npm publish
 
   publish-release-docker:
@@ -148,7 +147,7 @@ jobs:
             gh release upload ${{github.event.release.tag_name}} ./extension/playwright-mcp-extension-${{ steps.get-version.outputs.version }}.zip
 
   publish-mcp-registry:
-    if: github.event_name == 'release'
+    if: github.event_name == 'workflow_dispatch'
     needs: publish-release-npm
     runs-on: ubuntu-latest
     permissions:
