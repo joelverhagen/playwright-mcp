@@ -44,6 +44,8 @@ jobs:
       - run: npm run lint
 
       - name: Publish to npm with next tag
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
         run: npm publish --tag next
 
   publish-release-npm:
@@ -64,7 +66,10 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run lint
-      - run: npm publish
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
+        run: npm publish
 
   publish-release-docker:
     if: github.event_name == 'release'
