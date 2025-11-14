@@ -161,15 +161,17 @@ jobs:
         run: |
           cd ${{ runner.temp }}
 
-          # Install Microsoft Go
-          & ${{ github.workspace }}/.mcp/go-install.ps1
-
-          # Enable compliant crypto
-          $env:GOEXPERIMENT = "systemcrypto"
-
           # Clone and build the publisher tool
           git clone --branch "v1.3.7" https://github.com/modelcontextprotocol/registry
           cd registry
+
+          go get -tool github.com/microsoft/go-infra/goinstallscript@latest
+          go run github.com/microsoft/go-infra/goinstallscript
+          ./go-install.ps1 -GitHubActionsPath
+          
+          # Enable compliant crypto
+          $env:GOEXPERIMENT = "systemcrypto"
+
           go build -o ${{ runner.temp }}/mcp-publisher ./cmd/publisher
 
           # show help for the tool to ensure it's working
