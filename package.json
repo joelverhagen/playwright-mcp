@@ -5,7 +5,7 @@
   "mcpName": "com.joelverhagen.mcp/playwright",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/playwright-mcp.git"
+    "url": "git+https://github.com/joelverhagen/playwright-mcp.git"
   },
   "homepage": "https://playwright.dev",
   "engines": {
